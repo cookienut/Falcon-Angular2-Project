@@ -1,0 +1,265 @@
+header{
+background-color:black; 
+color:white;
+padding:5px;
+font-size:20px;
+font-family:rockwell;
+height:70px;
+margin: 5px 15px 5px 15px;
+}
+
+header.header-content{
+	float:left;
+	background-color:white; 
+	color:white;
+	padding:5px;
+	font-size:20px;
+	font-family:rockwell;
+}
+
+footer{
+background-color: black;
+text-align: center;
+color:white;
+padding:8px;
+margin: 5px 15px 5px 15px;
+height : 50px;
+left:5px;
+width:98%;
+position:absolute;
+
+}
+
+
+img.slide
+{
+	height:100%;
+	width:100%;
+}
+img.slide:hover{
+	transition:none;
+	transform:none;
+}
+
+img.logo
+{
+	border:1px;
+	height:50px;
+	width:75px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 0px;
+	border-radius: 25px;
+	-webkit-transition: all 200ms ease-in;
+	-webkit-transform: scale(1); 
+	-ms-transition: all 200ms ease-in;
+	-ms-transform: scale(1); 
+	-moz-transition: all 200ms ease-in;
+	-moz-transform: scale(1);
+	transition: all 200ms ease-in;
+	transform: scale(1);   
+	float:left;
+}
+
+
+.item:nth-child(1) {
+    background: #74C390;
+}
+
+.item:nth-child(2) {
+    background: #51BCE8;
+}
+
+.item:nth-child(3) {
+    background: #E46653;
+}
+
+.container
+{	
+	height:79%!important ;
+	width:100%!important;
+	overflow:hidden!important;
+}
+
+#login_username,#login_password
+{
+	margin-top:10px;
+}
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+.sign-with {
+    margin-top: 25px;
+    padding: 20px;
+}
+div#OR {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #C2C2C2;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -16px;
+    top: 40%;
+    z-index: 1;
+    background: #DFDFDF;
+}
+
+#animate-area{
+
+background-image: url("http://www.nickborelli.com/wp-content/uploads/2015/01/grey-gradient-abstract-hd-wallpaper-1920x1200-4431.jpg");
+margin: 0px 15px 0px 15px;
+}
+
+nav.container-fluid{
+	
+	color:white!important;
+}
+
+/* FOR HOMEPAGE IMAGE GRAYSCALE          */
+
+.container-home {
+	background-color:blue;
+    position: relative;
+    height:50%;
+	width: 50%;
+	overflow: hidden;
+	float:left;
+}
+
+.image-home-sell {
+  opacity: 1;
+  display: inline;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  bottom:-150px;
+  left:-80px;
+  transform: scale(1.4);
+}
+.image-home-buy {
+  opacity: 1;
+  display: inline;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container-home:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  /*background-color: #C70039;*/
+  color: white;
+  font-family:Courier New;
+  font-size: 40px;
+  border:2px white solid;
+  padding: 1px 5px 1px 5px;
+}
+
+.text:hover {
+	background-color: #C70039;
+}
+.image-home-sell:hover {
+  -webkit-filter: grayscale(100%); 
+  transition: .5s ease;
+    filter: grayscale(100%);
+  opacity: 1;
+  
+}
+.image-home-buy:hover {
+  -webkit-filter: grayscale(100%); 
+  transition: .5s ease;
+    filter: grayscale(100%);
+  opacity: 1;
+}
+
+/*USER PROFILE*/
+
+.panel-footer{
+	height:50px;
+}
+
+/*FOR CATEGORIES*/
+
+.catg{
+	
+	height: 60px;
+	width: 60px;
+	display: inline;
+	margin: 20px 13px 20px 10px;
+	border-radius:50px;
+}
+
+.catg:hover{
+	
+	height: 60px;
+	width: 60px;
+	display: inline;
+	margin: 20px 13px 20px 10px;
+	border-radius:5px;
+}
+
+
+.cat-container{
+	background-color:white;
+	margin-top:50px;
+    position: relative;
+    height:20%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.category{
+	margin-top:5px;
+	background-color:black;
+}
+
+
+/* FOR FURNITURE CAT*/
+
+.imgs{
+	
+	height: 200px;
+	width: 200px;
+	margin:0px 20px 0px 50px;
+	border:2px white solid;
+}
+
+.desc{
+	text-align:center;
+	color:white;
+	background-color:black;
+	font-family:Lucida Sans Unicode;
+	margin:2px 5px 20px 0px;
+	border: 1px white solid;
+}
+.desc:hover{
+	text-align:center;
+	color:#99ccff;
+	background-color:#484848;
+	font-family:Lucida Sans Unicode;
+	margin:2px 5px 20px 0px;
+	border: 1px white solid;
+}

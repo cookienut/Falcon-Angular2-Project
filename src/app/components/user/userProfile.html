@@ -1,0 +1,28 @@
+<div>
+	<input type="button" value="Get My Posts" (click)="getMyPosts()">
+</div>
+
+<div>
+	<input type="button" value="Get All Posts" (click)="getAllPosts()">
+</div>
+
+<div>
+	<input type="button" value="Edit Post" (click)="editPost()">
+</div>
+
+<div>
+	<input type="button" value="Delete Post" (click)="deletePost()">
+</div>
+
+<div>
+	<input type="button" value="Get my Profile" (click)="getMyProfile()">
+</div>
+
+<table border="1">
+	<tr *ngFor="let ad of adTable">
+		<td>{{ ad.title }}</td>
+		<td>{{ ad.name }}</td>
+		<td>{{ ad.category }}</td>
+		<td>{{ ad.description }}</td>
+	</tr>
+</table>
