@@ -55,5 +55,22 @@ export class ProductService {
 
     }
 
+    getSpecificAd(id:string){
+        let url = "http://192.168.3.144:9000/post?postId="+id;
+        let headers = new Headers();
+        headers.append('auth-token', '5976eb651c0edf75e32798e4');
+        headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({ headers: headers });
+        return this.my_http.get(url, options).
+            map((response: Response) => response.json());
+    }
+
+    deleteSpecificAd(id:string){
+        let url = "http://192.168.3.144:9000/post?postId=";
+        
+        return this.my_http.delete(url+id).
+            map((response: Response) => response.json());
+    }
+
 
 }

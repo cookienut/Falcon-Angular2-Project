@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ProductService } from '../../services/advertisement/advertisement.services';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'my-post-add',
@@ -16,7 +17,7 @@ export class PostAddComponent {
   advertisementActions:Array<any>=[];
 
 
-  constructor(private formBuilderx: FormBuilder, private productService: ProductService) {
+  constructor(private router:Router, private formBuilderx: FormBuilder, private productService: ProductService) {
     
     productService.getAdvertisementCategories().subscribe((data)=> { 
       this.categories=data.data.itemList;
@@ -25,7 +26,7 @@ export class PostAddComponent {
 
     productService.getAdvertisementActions().subscribe((data)=> { 
               this.advertisementActions=data.data.actionList;  
-      
+              console.log("Allowed Actions on Posts:",this.advertisementActions);
     });
 
     this.postAddObj = this.formBuilderx.group({
@@ -42,6 +43,8 @@ export class PostAddComponent {
 
   onSubmit() {
     console.log(this.postAddObj.value);
+    alert("Post Successful!");
+    this.gohome();
   }
 
   postNewAdv(){
@@ -53,7 +56,17 @@ export class PostAddComponent {
   allowedActions(){
 
       let actions=this.productService.getAdvertisementActions();
+      console.log(actions);
   }
 
+  gohome()
+  {
+    this.router.navigate(['userProfile']);
+  }
+
+  getPostActions()
+  {
+    return this.advertisementActions;
+  }
 
 }

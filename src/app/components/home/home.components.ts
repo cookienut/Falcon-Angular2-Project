@@ -10,13 +10,5 @@ export class HomeComponent  {
   
     constructor(private router:Router){}
 
-    newAdd(){
-
-        this.router.navigate(['postAdd']);
-    }
-
-    viewProfile(){
-        this.router.navigate(['userProfile']);
-    }
-
+    
  }

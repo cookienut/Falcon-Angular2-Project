@@ -26,7 +26,7 @@ margin: 5px 15px 5px 15px;
 height : 50px;
 left:5px;
 width:98%;
-position:absolute;
+
 
 }
 
@@ -44,11 +44,11 @@ img.slide:hover{
 img.logo
 {
 	border:1px;
-	height:50px;
-	width:75px;
+	height:70px;
+	width:85px;
 	transition: all 0.5s;
 	cursor: pointer;
-	margin: 0px;
+	margin: 0px 5px 2px 5px;
 	border-radius: 25px;
 	-webkit-transition: all 200ms ease-in;
 	-webkit-transform: scale(1); 
@@ -262,4 +262,9 @@ nav.container-fluid{
 	font-family:Lucida Sans Unicode;
 	margin:2px 5px 20px 0px;
 	border: 1px white solid;
+}
+
+.table-striped{
+
+	margin: 10px 50px 10px 15px;
 }

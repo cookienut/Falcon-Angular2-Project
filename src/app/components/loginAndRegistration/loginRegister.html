@@ -1,0 +1,158 @@
+<div class="modal-dialog modal-lg">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h4 class="modal-title" id="myModalLabel">
+				Login/Registration</h4>
+		</div>
+		<div class="modal-body">
+			<div class="row">
+				<div class="col-md-10" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+						<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div class="tab-pane active" id="Login">
+							<form [formGroup]="logInObj" role="form" class="form-horizontal" novalidate>
+								<div class="form-group">
+									<label for="email" class="col-sm-2 control-label">
+										Username:
+									</label>
+									<div class="col-sm-10">
+										<input #uname formControlName="usname" type="text" class="form-control"  placeholder="Username or Email">
+										<div *ngIf="logInObj.controls['usname'].errors && logInObj.controls['usname'].dirty">
+											<div *ngIf="logInObj.controls['usname'].hasError('required')" class="alert alert-danger"> 
+												Please enter username.
+											</div> 	
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInputPassword1" class="col-sm-2 control-label">
+															Password</label>
+									<div class="col-sm-10">
+										<input #pword formControlName="psword" type="password" class="form-control"  placeholder="Password" >
+										<div *ngIf="logInObj.controls['psword'].errors && logInObj.controls['psword'].dirty">
+											<div *ngIf="logInObj.controls['psword'].hasError('required')" class="alert alert-danger"> 
+												Please enter Password.
+											</div> 	
+										</div>	
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-10">
+										<button type="submit"[disabled]="!logInObj.valid" class="btn btn-primary btn-sm" data-dismiss="modal" (click)="tryLogin(uname.value,pword.value)">
+											Submit
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="tab-pane" id="Registration">
+							<form [formGroup]="registerObj" role="form" class="form-horizontal">
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label">
+										First name:
+									</label>
+									<div class="col-sm-10">
+										<input #firstname type="text" formControlName="fnamex" class="form-control" placeholder="First name" >
+										<div *ngIf="registerObj.controls['fnamex'].errors && registerObj.controls['fnamex'].dirty">
+												<div *ngIf="registerObj.controls['fnamex'].hasError('required')" class="alert alert-danger"> 
+													Mandatory Field
+												</div> 	
+										</div>
+									</div>	
+								</div>
+								<div class="form-group">
+									<label for="lastname" class="col-sm-2 control-label">
+															Last name</label>
+									<div class="col-sm-10">
+										<input #lastname type="text" formControlName="lnamex" class="form-control" id="lname" placeholder="Last name">
+									</div>
+									<div *ngIf="registerObj.controls['lnamex'].errors && registerObj.controls['lnamex'].dirty">
+												<div *ngIf="registerObj.controls['lnamex'].hasError('required')" class="alert alert-danger"> 
+													Mandatory Field
+												</div> 	
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="username" class="col-sm-2 control-label">
+															Username</label>
+									<div class="col-sm-10">
+										<input #username type="text" formControlName="unamex" class="form-control" id="uname" placeholder="Username">
+									</div>
+									<div *ngIf="registerObj.controls['unamex'].errors && registerObj.controls['unamex'].dirty">
+												<div *ngIf="registerObj.controls['unamex'].hasError('required')" class="alert alert-danger"> 
+													Mandatory Field
+												</div> 	
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="password" class="col-sm-2 control-label">
+															Password</label>
+									<div class="col-sm-10">
+										<input #password type="password" formControlName="pwordx" class="form-control" id="pword" placeholder="Password">
+									</div>
+									<div *ngIf="registerObj.controls['pwordx'].errors && registerObj.controls['pwordx'].dirty">
+												<div *ngIf="registerObj.controls['pwordx'].hasError('required')" class="alert alert-danger"> 
+													Mandatory Field
+												</div> 	
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="password" class="col-sm-2 control-label">
+															Confirm Password</label>
+									<div class="col-sm-10">
+										<input #cpassword type="password" formControlName="cpwordx" class="form-control" id="pword" placeholder="Confirm Password">
+									</div>
+									<div *ngIf="registerObj.controls['cpwordx'].errors && registerObj.controls['cpwordx'].dirty">
+												<div *ngIf="registerObj.controls['cpwordx'].hasError('required')" class="alert alert-danger"> 
+													Mandatory Field
+												</div> 	
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="email" class="col-sm-2 control-label">
+															Email</label>
+									<div class="col-sm-10">
+										<input #email type="email" formControlName="emailx" class="form-control" id="email" placeholder="Email">
+									</div>
+									<div *ngIf="registerObj.controls['emailx'].errors && registerObj.controls['emailx'].dirty">
+												<div *ngIf="registerObj.controls['emailx'].hasError('required')" class="alert alert-danger"> 
+													Mandatory Field
+												</div> 	
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="mobile" class="col-sm-2 control-label">
+															Contact</label>
+									<div class="col-sm-10">
+										<input #phone type="text" formControlName="phonex" class="form-control" id="mobile" placeholder="Mobile">
+									</div>
+									<div *ngIf="registerObj.controls['phonex'].errors &&registerObj.controls['phonex'].dirty">
+												<div *ngIf="registerObj.controls['phonex'].hasError('required')" class="alert alert-danger"> 
+													Mandatory Field
+												</div> 	
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-10">
+										<button  type="button" [disabled]="!registerObj.valid" class="btn btn-primary btn-sm" (click)="tryRegister(firstname.value,lastname.value,username.value,password.value,cpassword.value,email.value,phone.value)">
+											Register
+										</button>
+										<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">
+																Cancel</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

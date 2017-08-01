@@ -1,28 +1,45 @@
-<div>
-	<input type="button" value="Get My Posts" (click)="getMyPosts()">
-</div>
 
-<div>
-	<input type="button" value="Get All Posts" (click)="getAllPosts()">
-</div>
 
-<div>
-	<input type="button" value="Edit Post" (click)="editPost()">
-</div>
-
-<div>
-	<input type="button" value="Delete Post" (click)="deletePost()">
-</div>
-
-<div>
-	<input type="button" value="Get my Profile" (click)="getMyProfile()">
-</div>
-
-<table border="1">
+<table border="1" class="table table-striped">
 	<tr *ngFor="let ad of adTable">
 		<td>{{ ad.title }}</td>
 		<td>{{ ad.name }}</td>
 		<td>{{ ad.category }}</td>
 		<td>{{ ad.description }}</td>
+		<td><input type="button" class="btn btn-primary" value="View" (click)="getThisPost(ad)"></td>
+		<td><input type="button" class="btn btn-warning" value="Edit" ></td>
+		<td><input type="button" class="btn btn-danger" value="Delete" (click)="deletePost(ad)"></td>
 	</tr>
 </table>
+
+<hr>
+
+<table border="1" class="table table-striped">
+	<tr>
+		<th>DATE</th>
+		<th>TITLE</th>
+		<th>UPLOADER</th>
+		<th>CATEGORY</th>
+		<th>DESCRIPTION</th>
+		<th>ADDRESS</th>
+		<th>ACTIONS</th>
+	</tr>	
+	<tr *ngFor="let adv of SpecificAd">
+		<td>26-Jul-2017</td>
+		<td>{{ adv.title }}</td>
+		<td>{{ adv.name }}</td>
+		<td>{{ adv.category }}</td>
+		<td>{{ adv.description }}</td>
+		<td>Balewadi Pune</td>
+		<td>No Bargain</td>
+	</tr>
+</table>
+
+<hr> 
+
+<div>
+	<input type="button" class="btn btn-primary" value="Get My Posts" (click)="getMyPosts()">
+	<input type="button" class="btn btn-primary" value="Post an Add" (click)="newAdd()">
+<!--
+	<input type="button" class="btn btn-primary" value="Get my Profile" (click)="getMyProfile()">    -->
+</div>
